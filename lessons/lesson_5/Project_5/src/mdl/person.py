@@ -2,8 +2,8 @@ from src.mdl.name import Name
 
 
 class Person:
-    name: Name
-    age: int
+    #name: Name
+    #age: int
 
     def __init__(self, name: Name, age: int):
         self.name = name
