@@ -2,7 +2,7 @@ from src.mdl.name import Name
 from src.mdl.person import Person, Sex
 
 
-def main(name):
+def main():
     bob = Person(Name("Bob", "Muster"), 27, Sex.MALE)
     alice = Person(Name("Alice", "Muster"), 25, Sex.FEMALE)
     bob.marry(alice)
@@ -48,4 +48,4 @@ def main(name):
 
 
 if __name__ == '__main__':
-    main('PyCharm')
+    main()
