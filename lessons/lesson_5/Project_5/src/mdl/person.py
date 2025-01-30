@@ -31,6 +31,7 @@ class Person:
         if sex not in Sex:
             raise ValueError(f"Expected 'sex' to be a valid instance of 'Sex', but got '{sex}'")
         
+        # Set the attributes of the person
         self._name = name
         self._age = age
         self._sex = sex
@@ -39,6 +40,7 @@ class Person:
         self._spouse = None
         self._children = []
         self._parents = []
+        # The attribute names starting with an underscore are meant to be private
 
     
     def __str__(self):
@@ -135,6 +137,21 @@ class Person:
     def is_married(self) -> bool:
         # Return whether the person is married
         return self._spouse is not None
+    
+
+    def is_single(self) -> bool:
+        # Return whether the person is single
+        return self._spouse is None
+    
+
+    def is_parent(self) -> bool:
+        # Return whether the person has children
+        return bool(self._children)
+    
+
+    def is_grandparent(self) -> bool:
+        # Return whether the person has grandchildren
+        return any(child._children for child in self._children)
     
     
     def get_spouse(self) -> 'Person':
